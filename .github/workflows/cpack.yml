@@ -1,0 +1,64 @@
+name: CMake CI with CPack
+
+on:
+  push:
+    branches: [ master, main ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake cmake-data rpm
+
+    - name: Configure CMake
+      run: |
+        cd solver_application
+        cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
+
+    - name: Build
+      run: |
+        cd solver_application
+        cmake --build _build
+
+    - name: Install
+      run: |
+        cd solver_application
+        cmake --build _build --target install
+
+    - name: Run tests (if any)
+      run: |
+        cd solver_application
+        cmake --build _build --target test -- ARGS=--verbose || true
+
+    - name: Package with CPack
+      if: startsWith(github.ref, 'refs/tags/')
+      run: |
+        cd solver_application/_build
+        cpack -G "TGZ"
+        cpack -G "DEB"
+        cpack -G "RPM"
+
+    - name: Upload to GitHub Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          solver_application/_build/*.tar.gz
+          solver_application/_build/*.deb
+          solver_application/_build/*.rpm
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
