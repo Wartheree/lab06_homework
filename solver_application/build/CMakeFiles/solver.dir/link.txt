@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/solver.dir/link.d CMakeFiles/solver.dir/equation.cpp.o -o solver  formatter_ex_lib_build/libformatter_ex.a solver_lib_build/libsolver_lib.a formatter_ex_lib_build/formatter_lib_build/libformatter.a
