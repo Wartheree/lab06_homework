@@ -1,9 +1,0 @@
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/CMakeFiles/hello_world.dir
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/CMakeFiles/edit_cache.dir
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/CMakeFiles/rebuild_cache.dir
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/formatter_ex_lib_build/CMakeFiles/formatter_ex.dir
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/formatter_ex_lib_build/CMakeFiles/edit_cache.dir
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/formatter_ex_lib_build/CMakeFiles/rebuild_cache.dir
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/formatter_ex_lib_build/formatter_lib_build/CMakeFiles/formatter.dir
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/formatter_ex_lib_build/formatter_lib_build/CMakeFiles/edit_cache.dir
-/home/danila/Wartheree/workspace/projects/lab03_homework/hello_world_application/build/formatter_ex_lib_build/formatter_lib_build/CMakeFiles/rebuild_cache.dir
